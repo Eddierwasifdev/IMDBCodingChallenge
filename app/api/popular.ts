@@ -17,6 +17,7 @@ export default async function handler(
 
     const data = await response.json();
     res.status(200).json(data.Search || []);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch movies" });
   }

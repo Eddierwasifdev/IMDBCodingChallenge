@@ -67,6 +67,7 @@ export async function GET() {
     );
 
     return NextResponse.json({ Search: moviesWithImdbIds });
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     console.error("Error fetching popular movies:", error);
     return NextResponse.json(

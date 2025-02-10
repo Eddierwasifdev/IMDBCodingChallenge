@@ -68,6 +68,7 @@ export default function Trending() {
         );
 
         setTrending(moviesWithImdbIds);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (err) {
         console.error("Error fetching trending:", err);
         setError("Failed to load trending movies");

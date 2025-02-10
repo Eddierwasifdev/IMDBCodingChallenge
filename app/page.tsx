@@ -35,6 +35,8 @@ export default function Home() {
         }
         setLoading(false);
       })
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
       .catch((error) => {
         console.error("Failed to fetch movies:", error);
         setLoading(false);

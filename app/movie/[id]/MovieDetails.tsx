@@ -48,6 +48,8 @@ export default function MovieDetails({ id }: { id: string }) {
             setError(null);
           }
         })
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
         .catch((err) => {
           console.error("Failed to fetch movie details:", err);
           setError("Failed to fetch movie details");

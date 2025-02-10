@@ -38,6 +38,7 @@ export default async function handler(
     }
 
     return res.status(200).json(data);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     console.error("Error fetching movie details:", error);
     return res.status(500).json({ error: "Failed to fetch movie details" });

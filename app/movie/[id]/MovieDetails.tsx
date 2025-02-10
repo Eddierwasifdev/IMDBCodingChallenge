@@ -71,13 +71,11 @@ export default function MovieDetails({ id }: { id: string }) {
   if (!movie) {
     return (
       <Card className="w-full max-w-3xl mx-auto">
-        <CardContent className="p-6">
-          <div className="space-y-4">
-            <Skeleton className="h-8 w-3/4" />
-            <Skeleton className="h-[400px] w-full" />
-            <Skeleton className="h-4 w-full" />
-            <Skeleton className="h-4 w-2/3" />
-          </div>
+        <CardContent className="p-6 space-y-3">
+          <Skeleton className="h-8 w-3/4" />
+          <Skeleton className="h-[400px] w-full" />
+          <Skeleton className="h-4 w-full" />
+          <Skeleton className="h-4 w-2/3" />
         </CardContent>
       </Card>
     );
@@ -101,20 +99,14 @@ export default function MovieDetails({ id }: { id: string }) {
       </CardHeader>
       <CardContent className="p-6 space-y-6">
         <div className="flex flex-col md:flex-row gap-6">
-          {movie.Poster ? (
-            <Image
-              src={movie.Poster || "/no-poster.jpg"}
-              alt={movie.Title || "Movie Poster"}
-              width={300}
-              height={450}
-              className="rounded-lg shadow-lg object-cover w-full md:w-[300px] h-[450px]"
-              priority // Optional: Use if the image is above the fold
-            />
-          ) : (
-            <div className="rounded-lg shadow-lg w-full md:w-[300px] h-[450px] bg-gray-200 flex items-center justify-center">
-              <span className="text-muted-foreground">No Poster Available</span>
-            </div>
-          )}
+          <Image
+            src={movie.Poster || "/no-poster.jpg"}
+            alt={movie.Title || "Movie Poster"}
+            width={300}
+            height={450}
+            className="rounded-lg shadow-lg object-cover w-full md:w-[300px] h-[450px]"
+            priority // Optional: Use if the image is above the fold
+          />
           <div className="space-y-4 flex-1">
             <div className="flex flex-wrap gap-2">
               {genres.map((genre) => (

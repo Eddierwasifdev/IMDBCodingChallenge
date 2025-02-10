@@ -1,4 +1,3 @@
-import Link from "next/link";
 import MovieDetails from "./MovieDetails";
 import SearchBar from "@/components/SearchBar";
 

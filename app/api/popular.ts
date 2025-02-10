@@ -1,4 +1,3 @@
-// pages/api/popular.ts
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(

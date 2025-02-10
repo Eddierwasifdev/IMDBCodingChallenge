@@ -103,7 +103,7 @@ export default function MovieDetails({ id }: { id: string }) {
         <div className="flex flex-col md:flex-row gap-6">
           {movie.Poster ? (
             <Image
-              src={movie.Poster}
+              src={movie.Poster || "/no-poster.jpg"}
               alt={movie.Title || "Movie Poster"}
               width={300}
               height={450}

@@ -6,6 +6,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Star, Clock, Film } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface MovieDetails {
   Title?: string;
@@ -100,11 +101,20 @@ export default function MovieDetails({ id }: { id: string }) {
       </CardHeader>
       <CardContent className="p-6 space-y-6">
         <div className="flex flex-col md:flex-row gap-6">
-          <img
-            src={movie.Poster}
-            alt={movie.Title}
-            className="rounded-lg shadow-lg object-cover w-full md:w-[300px] h-[450px]"
-          />
+          {movie.Poster ? (
+            <Image
+              src={movie.Poster}
+              alt={movie.Title || "Movie Poster"}
+              width={300}
+              height={450}
+              className="rounded-lg shadow-lg object-cover w-full md:w-[300px] h-[450px]"
+              priority // Optional: Use if the image is above the fold
+            />
+          ) : (
+            <div className="rounded-lg shadow-lg w-full md:w-[300px] h-[450px] bg-gray-200 flex items-center justify-center">
+              <span className="text-muted-foreground">No Poster Available</span>
+            </div>
+          )}
           <div className="space-y-4 flex-1">
             <div className="flex flex-wrap gap-2">
               {genres.map((genre) => (

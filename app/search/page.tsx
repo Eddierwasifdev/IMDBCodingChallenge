@@ -31,7 +31,7 @@ export default function SearchPage() {
           setResults(data.Search || []);
           setError(null);
         })
-        .catch((err) => {
+        .catch(() => {
           setError("Failed to fetch search results");
           setResults([]);
         })

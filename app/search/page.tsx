@@ -85,7 +85,9 @@ function SearchContent() {
                   <div className="relative w-full pt-[150%]">
                     <Image
                       src={
-                        movie.Poster !== "N/A" ? movie.Poster : "/no-poster.jpg"
+                        movie.Poster !== "N/A" && movie.Poster
+                          ? movie.Poster
+                          : "/no-poster.jpg"
                       }
                       alt={movie.Title}
                       fill

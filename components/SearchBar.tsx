@@ -153,7 +153,8 @@ export default function SearchBar() {
                   onSelect={() => handleSearch(query)}
                   className="flex items-center px-4 py-2"
                 >
-                  Search for &quot;{query}&quot;
+                  {/* eslint-disable-next-line react/no-unescaped-entities */}
+                  Search for "{query}"
                 </CommandItem>
               </CommandGroup>
             )}
